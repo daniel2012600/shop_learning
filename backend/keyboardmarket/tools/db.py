@@ -24,6 +24,18 @@ class ProductCategory(Enum):
     mouse = 2
     desktop = 3
 
+    @staticmethod
+    def list():
+        return list(map(lambda c: c.value, ProductCategory))
+        
+    @staticmethod
+    def dict():
+        return [
+            {"category":"鍵盤","value":ProductCategory.keyboard.value},
+            {"category":"耳機","value":ProductCategory.earphone.value},
+            {"category":"滑鼠","value":ProductCategory.mouse.value},
+            {"category":"桌機","value":ProductCategory.desktop.value}
+        ]
 
 if __name__ == '__main__':
     print(UserStatus.deactivate.value)
